@@ -1,38 +1,18 @@
 ﻿@model Dota2API.Models.News
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $('#getNews').click(function () { alert('ololo'); });
+    </script>
+}
+
 @{
-    ViewBag.Title = "Admin";
+    ViewBag.Title = "Admin Panel";
 }
 
 <h2>@ViewBag.Title</h2>
 <div class="content">
-    <div class="float-left">
-        <ul id="update-products">
-            <li>
-                <div><div class="item">Product ID</div><span></span></div>
-                <div><div class="item">Title</div> <input type="text" /></div> 
-                <div><div class="item">Content</div> <input type="text" /></div>
-                <div><div class="item">Source</div> <input type="text" /></div>
-                <div><div class="item">Publish Date</div> <input type="date" /></div>
-                <div>
-                    <input type="button" value="Update" />
-                    <input type="button" value="Delete Item" />
-                </div>
-         </li>
-        </ul>
-    </div>
-
-    <div class="float-right">
-    <h2>Add New Product</h2>
-    <form id="product">
-        @Html.ValidationSummary(true)
-        <fieldset>
-            <legend>Contact</legend>
-            @Html.EditorForModel()
-            <p>
-                <input type="submit" value="Save" />
-            </p>
-        </fieldset>
-    </form>
-    </div>
+    <button id="getNews">Get News</button>
+    <span id="result"></span>
 </div>
