@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Localized>
+  <String Key="Category">Категория</String>
+  <String Key="Certainty">Достоверность</String>
+  <String Key="CollapseAll">Свернуть все</String>
+  <String Key="CheckId">ИД проверки</String>
+  <String Key="Error">Ошибка</String>
+  <String Key="Errors">ошибки</String>
+  <String Key="ExpandAll">Развернуть все</String>
+  <String Key="Help">Справка</String>
+  <String Key="Line">Строка</String>
+  <String Key="Messages">сообщения</String>
+  <String Key="LocationNotStoredInPdb">[расположение не сохранено в PDB]</String>
+  <String Key="Project">Проект</String>
+  <String Key="Resolution">Разрешение</String>
+  <String Key="Rule">Правило</String>
+  <String Key="RuleFile">Файл правил</String>
+  <String Key="RuleDescription">Описание правила</String>
+  <String Key="Source">Источник</String>
+  <String Key="Status">Состояние</String>
+  <String Key="Target">Цель</String>
+  <String Key="Warning">Предупреждение</String>
+  <String Key="Warnings">предупреждения</String>
+  <String Key="ReportTitle">Отчет по анализу кода</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0055" Kind="AssemblyLoad">
+   <Type>Microsoft.FxCop.Common.AssemblyLoadException</Type>
+   <ExceptionMessage>Не удалось загрузить C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\Dota2API.dll. При чтении модуля "System.Web.Http" обнаружена следующая ошибка: Не удается разрешить ссылку на сборку: System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a.</ExceptionMessage>
+   <InnerType>Microsoft.FxCop.Sdk.InvalidMetadataException</InnerType>
+   <InnerExceptionMessage>При чтении модуля "System.Web.Http" обнаружена следующая ошибка: Не удается разрешить ссылку на сборку: System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a.</InnerExceptionMessage>
+   <InnerStackTrace>   в Microsoft.FxCop.Sdk.Reader.HandleError(ModuleNode mod, String errorMessage)
+   в Microsoft.FxCop.Sdk.Reader.GetAssemblyFromReference(AssemblyReference assemblyReference)
+   в Microsoft.FxCop.Sdk.AssemblyReference.get_Assembly()
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromRef(Int32 i, Boolean expectStruct)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeIfNotGenericInstance(Int32 codedIndex)
+   в Microsoft.FxCop.Sdk.Reader.ConstructCorrectTypeNodeSubclass(Int32 i, Identifier namesp, Int32 firstInterfaceIndex, Int32 lastInterfaceIndex, TypeFlags flags, InterfaceCollection interfaces, Int32 baseTypeCodedIndex, Boolean isSystemEnum)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromDefHelper(Int32 i)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromDef(Int32 i)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeList(ModuleNode module)
+   в Microsoft.FxCop.Sdk.ModuleNode.get_Types()
+   в Microsoft.FxCop.Sdk.ModuleNode.get_ModuleReferences()
+   в Microsoft.FxCop.Common.AssemblyNodeEx.GetAllModuleReferences(AssemblyNode assembly)
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssemblyThread()
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver, Boolean getDebugInfo, Boolean useGlobalCache)
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver)
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName)
+   в Microsoft.FxCop.Common.IntrospectionAssemblyResolver.GetAssembly(String assemblyPath)
+   в Microsoft.FxCop.Common.FxCopAssemblyResolver`1.Resolve(AssemblyName reference, String referencingModulePath)
+   в Microsoft.FxCop.Common.FxCopAssemblyResolver`1.ResolveAssembly(AssemblyName reference, String referencingModuleLocation, Boolean optional)
+   в Microsoft.FxCop.Common.IntrospectionAssemblyResolver.ResolveAssemblyReference(AssemblyReference reference, ModuleNode module)
+   в Microsoft.FxCop.Sdk.ModuleNode.Resolve(AssemblyReference assemblyReference)
+   в Microsoft.FxCop.Sdk.Reader.GetAssemblyFromReference(AssemblyReference assemblyReference)
+   в Microsoft.FxCop.Sdk.AssemblyReference.get_Assembly()
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromRef(Int32 i, Boolean expectStruct)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeIfNotGenericInstance(Int32 codedIndex)
+   в Microsoft.FxCop.Sdk.Reader.ConstructCorrectTypeNodeSubclass(Int32 i, Identifier namesp, Int32 firstInterfaceIndex, Int32 lastInterfaceIndex, TypeFlags flags, InterfaceCollection interfaces, Int32 baseTypeCodedIndex, Boolean isSystemEnum)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromDefHelper(Int32 i)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeFromDef(Int32 i)
+   в Microsoft.FxCop.Sdk.Reader.GetTypeList(ModuleNode module)
+   в Microsoft.FxCop.Sdk.ModuleNode.get_Types()
+   в Microsoft.FxCop.Sdk.ModuleNode.get_ModuleReferences()
+   в Microsoft.FxCop.Common.AssemblyNodeEx.GetAllModuleReferences(AssemblyNode assembly)
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssemblyThread()
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver, Boolean getDebugInfo, Boolean useGlobalCache)
+   в Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver)
+   в Microsoft.FxCop.Engines.Introspection.IntrospectionAnalysisEngine.CanLoadTargetFile(TargetFile target)
+   в Microsoft.FxCop.Common.EngineManager.LoadTargets(TargetFile target, Boolean resetCounts, String loadEngine)</InnerStackTrace>
+  </Exception>
+  <Exception Keyword="CA0052" Kind="Engine">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>Не выбрана ни одна цель.</ExceptionMessage>
+  </Exception>
+  <Exception Keyword="CA0058" Kind="Engine">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>Не удалось найти сборку "System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", на которую указывает ссылка. Эта сборка необходима для анализа. На нее ссылается: C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\Dota2API.dll, C:\Users\Alex\Documents\GitHub\Dota2API\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll.</ExceptionMessage>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

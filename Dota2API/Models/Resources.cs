@@ -7,7 +7,7 @@
         [ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required]
-        public string Link { get; set; }
+        public string Resource { get; set; }
         public string Language { get; set; }
     }
 }

@@ -10,8 +10,8 @@
         {
             var resources = new List<Resources>()
             {
-                new Resources() {Link = "http://blog.dota2.com/feed/", Language = "en"},
-                new Resources() {Link = "http://ru.dota2.com/feed/", Language = "ru"},
+                new Resources() {Resource = "http://blog.dota2.com/feed/", Language = "en"},
+                new Resources() {Resource = "http://ru.dota2.com/feed/", Language = "ru"},
             };
 
             resources.ForEach(p => context.Resources.Add(p));
