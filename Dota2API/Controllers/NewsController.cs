@@ -116,9 +116,13 @@ namespace Dota2API.Controllers
             {
                 IParser parser = ParserFactory.GetParser(item.Type);
                 List<News> news = parser.Parse(item.Resource);
-                news.ForEach(p => db.News.Add(p));
+                foreach(News p in news)
+                {
+                    p.ResourceId = item.Id;
+                    db.News.Add(p);
+                    db.SaveChanges();
+                }
             }
-            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

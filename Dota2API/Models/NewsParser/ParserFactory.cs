@@ -7,9 +7,9 @@ namespace Dota2API.Models.NewsParser
 {
     public static class ParserFactory
     {
-        public static IParser GetParser(string type)
+        public static BaseParser GetParser(string type)
         {
-            IParser HParser = new DefaultParser();
+            BaseParser HParser = new DefaultParser();
             switch (type)
             { 
                 case "Dota2ru":

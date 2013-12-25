@@ -8,6 +8,6 @@ namespace Dota2API.Models.NewsParser
 {
     interface IParser
     {
-        public List<News> Parse(string url);
+        List<News> Parse(string url);
     }
 }
