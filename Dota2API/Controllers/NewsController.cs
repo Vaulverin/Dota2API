@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Dota2API.Models;
+using Dota2API.Models.NewsParser;
 
 namespace Dota2API.Controllers
 {
@@ -13,7 +14,6 @@ namespace Dota2API.Controllers
     {
         private Dota2APIContext db = new Dota2APIContext();
 
-        //
         // GET: /News/
 
         public ActionResult Index()
@@ -22,7 +22,6 @@ namespace Dota2API.Controllers
             return View(news.ToList());
         }
 
-        //
         // GET: /News/Details/5
 
         public ActionResult Details(int id = 0)
@@ -35,7 +34,6 @@ namespace Dota2API.Controllers
             return View(news);
         }
 
-        //
         // GET: /News/Create
 
         public ActionResult Create()
@@ -44,7 +42,6 @@ namespace Dota2API.Controllers
             return View();
         }
 
-        //
         // POST: /News/Create
 
         [HttpPost]
@@ -61,7 +58,6 @@ namespace Dota2API.Controllers
             return View(news);
         }
 
-        //
         // GET: /News/Edit/5
 
         public ActionResult Edit(int id = 0)
@@ -75,7 +71,6 @@ namespace Dota2API.Controllers
             return View(news);
         }
 
-        //
         // POST: /News/Edit/5
 
         [HttpPost]
@@ -91,7 +86,6 @@ namespace Dota2API.Controllers
             return View(news);
         }
 
-        //
         // GET: /News/Delete/5
 
         public ActionResult Delete(int id = 0)
@@ -104,7 +98,6 @@ namespace Dota2API.Controllers
             return View(news);
         }
 
-        //
         // POST: /News/Delete/5
 
         [HttpPost, ActionName("Delete")]
@@ -113,6 +106,23 @@ namespace Dota2API.Controllers
             News news = db.News.Find(id);
             db.News.Remove(news);
             db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult InitNewsParser()
+        {
+            List<Resources> res = db.Resources.ToList();
+            foreach (Resources item in res)
+            {
+                IParser parser = ParserFactory.GetParser(item.Type);
+                List<News> news = parser.Parse(item.Resource);
+                foreach(News p in news)
+                {
+                    p.ResourceId = item.Id;
+                    db.News.Add(p);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

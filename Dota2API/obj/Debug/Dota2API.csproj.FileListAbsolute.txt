@@ -299,3 +299,4 @@ C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.csprojResolv
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.dll
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.pdb
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\Dota2API.dll.CodeAnalysisLog.xml
+C:\Users\Alexander\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.csprojResolveAssemblyReference.cache
