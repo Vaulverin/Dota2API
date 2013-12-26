@@ -118,11 +118,15 @@ namespace Dota2API.Controllers
                 List<News> news = parser.Parse(item.Resource);
                 foreach(News p in news)
                 {
-                    p.ResourceId = item.Id;
-                    db.News.Add(p);
-                    db.SaveChanges();
+                    var result = db.News.Where(n => n.Link == p.Link);
+                    if (result.ToList().Count == 0)
+                    {
+                        p.ResourceId = item.Id;
+                        db.News.Add(p);
+                    }
                 }
             }
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
