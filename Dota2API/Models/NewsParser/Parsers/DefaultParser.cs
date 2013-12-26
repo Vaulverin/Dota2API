@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ServiceModel.Syndication;
 using System.Xml;
+using System.Text;
 
 namespace Dota2API.Models.NewsParser
 {
@@ -13,10 +14,20 @@ namespace Dota2API.Models.NewsParser
         {
             List<News> result = new List<News>();
             XmlReader reader = XmlReader.Create(url);
-            SyndicationFeed feed = SyndicationFeed.Load(reader);
-            foreach (SyndicationItem item in feed.Items)
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            nsmgr.AddNamespace("content", doc.DocumentElement.GetNamespaceOfPrefix("content"));
+            foreach (XmlNode n in doc.SelectNodes("/rss/channel/item"))
             {
-                result.Add(new News() { Title = item.Title.Text, Content = item.Summary.Text, PublishDate = item.PublishDate.DateTime });
+                string link = HttpUtility.UrlDecode(n.SelectSingleNode("link").InnerText);
+                result.Add(new News() {
+                    Title = n.SelectSingleNode("title").InnerText,
+                    Content = n.SelectSingleNode("content:encoded", nsmgr).InnerText,
+                    PublishDate = DateTime.Parse(n.SelectSingleNode("pubDate").InnerText),
+                    Link = link
+                });
+                
             }
             return result;
         }
