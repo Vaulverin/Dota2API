@@ -295,8 +295,7 @@ C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\ko\System.Spatial.resources
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\ru\System.Spatial.resources.dll
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.dll
 C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.pdb
-C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\bin\Dota2API.dll.CodeAnalysisLog.xml
 C:\Users\Alexander\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\Debug\Dota2API.csprojResolveAssemblyReference.cache

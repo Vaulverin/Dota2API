@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\ConfigForPublish\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\ConfigForPublish\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Alex\Documents\GitHub\Dota2API\Dota2API\obj\ConfigForPublish\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
