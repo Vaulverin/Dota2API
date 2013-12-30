@@ -24,5 +24,9 @@ namespace Dota2API.Controllers
 
             return View();
         }
+        public ActionResult Sender()
+        {
+            return View();
+        }
     }
 }

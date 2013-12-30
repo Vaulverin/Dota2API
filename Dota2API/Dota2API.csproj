@@ -207,6 +207,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\QuerySenderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -341,6 +342,7 @@
     <Content Include="Views\News\Create.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\Home\Sender.cshtml" />
     <None Include="Web.ConfigForPublish.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
