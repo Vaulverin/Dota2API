@@ -215,12 +215,14 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Dota2APIContext.cs" />
     <Compile Include="Models\Dota2APIContextInitializer.cs" />
+    <Compile Include="Models\Leagues.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsParser\BaseParser.cs" />
     <Compile Include="Models\NewsParser\IParser.cs" />
     <Compile Include="Models\NewsParser\ParserFactory.cs" />
     <Compile Include="Models\NewsParser\Parsers\DefaultParser.cs" />
     <Compile Include="Models\Resources.cs" />
+    <Compile Include="Models\Teams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
