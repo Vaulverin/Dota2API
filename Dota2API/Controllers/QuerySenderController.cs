@@ -18,6 +18,7 @@ namespace Dota2API.Controllers
 
         public string Post(UrlFormObject Form)
         {
+            if (Form.Url == null) return "";
             var json = new WebClient().DownloadString(Form.Url);
             return json;
         }

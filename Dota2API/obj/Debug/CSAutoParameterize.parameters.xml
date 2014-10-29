@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-Dota2API-20131205172741;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-Dota2API-20131205172741.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alex\\Documents\\GitHub\\Dota2API\\Dota2API\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="Dota2APIContext-Web.config Connection String" description="Dota2APIContext Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=Dota2APIContext-20131206181913; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|Dota2APIContext-20131206181913.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alex\\Documents\\GitHub\\Dota2API\\Dota2API\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Dota2APIContext']/@connectionString" />
-  </parameter>
-</parameters>

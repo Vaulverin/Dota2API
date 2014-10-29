@@ -17,15 +17,15 @@ namespace Dota2API.Controllers
         private Dota2APIContext db = new Dota2APIContext();
 
         // GET api/Admin
-        public IEnumerable<News> GetNews()
+        public IEnumerable<NewsModel> GetNews()
         {
             return db.News.AsEnumerable();
         }
 
         // GET api/Admin/5
-        public News GetNews(int id)
+        public NewsModel GetNews(int id)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             if (news == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
@@ -35,7 +35,7 @@ namespace Dota2API.Controllers
         }
 
         // PUT api/Admin/5
-        public HttpResponseMessage PutNews(int id, News news)
+        public HttpResponseMessage PutNews(int id, NewsModel news)
         {
             if (!ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace Dota2API.Controllers
         }
 
         // POST api/Admin
-        public HttpResponseMessage PostNews(News news)
+        public HttpResponseMessage PostNews(NewsModel news)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace Dota2API.Controllers
         // DELETE api/Admin/5
         public HttpResponseMessage DeleteNews(int id)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             if (news == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);

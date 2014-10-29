@@ -65,6 +65,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -206,6 +207,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeaguesController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\QuerySenderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -213,16 +215,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\APIWorker\APIResponseModel.cs" />
+    <Compile Include="Models\APIWorker\APIWorker.cs" />
     <Compile Include="Models\Dota2APIContext.cs" />
     <Compile Include="Models\Dota2APIContextInitializer.cs" />
-    <Compile Include="Models\Leagues.cs" />
-    <Compile Include="Models\News.cs" />
-    <Compile Include="Models\NewsParser\BaseParser.cs" />
-    <Compile Include="Models\NewsParser\IParser.cs" />
-    <Compile Include="Models\NewsParser\ParserFactory.cs" />
-    <Compile Include="Models\NewsParser\Parsers\DefaultParser.cs" />
-    <Compile Include="Models\Resources.cs" />
-    <Compile Include="Models\Teams.cs" />
+    <Compile Include="Models\EnumClasses.cs" />
+    <Compile Include="Models\LeaguesModel.cs" />
+    <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\Parsers\BaseParser.cs" />
+    <Compile Include="Models\Parsers\IParser.cs" />
+    <Compile Include="Models\Parsers\ParserFactory.cs" />
+    <Compile Include="Models\Parsers\NewsParsers\DefaultNewsParser.cs" />
+    <Compile Include="Models\ResourcesModel.cs" />
+    <Compile Include="Models\TeamsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +350,11 @@
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\Delete.cshtml" />
     <Content Include="Views\Home\Sender.cshtml" />
+    <Content Include="Views\Leagues\Index.cshtml" />
+    <Content Include="Views\Leagues\Details.cshtml" />
+    <Content Include="Views\Leagues\Create.cshtml" />
+    <Content Include="Views\Leagues\Edit.cshtml" />
+    <Content Include="Views\Leagues\Delete.cshtml" />
     <None Include="Web.ConfigForPublish.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

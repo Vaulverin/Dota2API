@@ -8,7 +8,8 @@ namespace Dota2API.Models
         {
         }
 
-        public DbSet<News> News { get; set; }
-        public DbSet<Resources> Resources { get; set; }
+        public DbSet<NewsModel> News { get; set; }
+        public DbSet<ResourcesModel> Resources { get; set; }
+        public DbSet<LeaguesModel> Leagues { get; set; }
     }
 }

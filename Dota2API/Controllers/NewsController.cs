@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Dota2API.Models;
-using Dota2API.Models.NewsParser;
+using Dota2API.Models.Parsers;
 
 namespace Dota2API.Controllers
 {
@@ -26,7 +26,7 @@ namespace Dota2API.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -45,7 +45,7 @@ namespace Dota2API.Controllers
         // POST: /News/Create
 
         [HttpPost]
-        public ActionResult Create(News news)
+        public ActionResult Create(NewsModel news)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace Dota2API.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -74,7 +74,7 @@ namespace Dota2API.Controllers
         // POST: /News/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(News news)
+        public ActionResult Edit(NewsModel news)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Dota2API.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -103,7 +103,7 @@ namespace Dota2API.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            News news = db.News.Find(id);
+            NewsModel news = db.News.Find(id);
             db.News.Remove(news);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -111,14 +111,14 @@ namespace Dota2API.Controllers
 
         public ActionResult InitNewsParser()
         {
-            List<Resources> res = db.Resources.ToList();
-            foreach (Resources item in res)
+            List<ResourcesModel> res = db.Resources.ToList();
+            foreach (ResourcesModel item in res)
             {
-                IParser parser = ParserFactory.GetParser(item.Type);
-                List<News> news = parser.Parse(item.Resource);
-                foreach(News p in news)
+                IParser parser = ParserFactory.GetParser(item.ParserType);
+                List<NewsModel> news = (List<NewsModel>)parser.Parse(item.Resource);
+                foreach(NewsModel p in news)
                 {
-                    var result = db.News.Where(n => n.Link == p.Link);
+                    var result = db.News.Where(elem => elem.Link == p.Link);
                     if (result.ToList().Count == 0)
                     {
                         p.ResourceId = item.Id;
