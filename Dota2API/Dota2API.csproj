@@ -221,6 +221,9 @@
     <Compile Include="Models\Dota2APIContextInitializer.cs" />
     <Compile Include="Models\EnumClasses.cs" />
     <Compile Include="Models\LeaguesModel.cs" />
+    <Compile Include="Models\Matches\AbilityModel.cs" />
+    <Compile Include="Models\Matches\MatchesModel.cs" />
+    <Compile Include="Models\Matches\PlayerModel.cs" />
     <Compile Include="Models\NewsModel.cs" />
     <Compile Include="Models\Parsers\BaseParser.cs" />
     <Compile Include="Models\Parsers\IParser.cs" />

@@ -116,7 +116,7 @@ namespace Dota2API.Controllers
 
         public ActionResult Load()
         {
-            List<LeaguesModel> _leagues = Models.APIWorker.APIWorker.GetLeagueListing(Languages.ru);
+            List<LeaguesModel> _leagues = Models.APIWorker.APIWorker.GetLeaguesListing(Languages.ru);
             foreach (LeaguesModel _item in _leagues)
             {
                 _item.Language = Languages.ru;
